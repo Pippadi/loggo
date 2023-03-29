@@ -39,7 +39,7 @@ func main() {
 Outputs
 
 ```
-2023-03-29T14:08:33.751 [DBG]  Set correct logging level
-2023-03-29T14:08:33.751 [INF]  Changing the world 4 lines at a time
-2023-03-29T14:08:33.751 [ERR]  Barf!
+2023-03-29T14:08:33.751 [DBG] Set correct logging level
+2023-03-29T14:08:33.751 [INF] Changing the world 4 lines at a time
+2023-03-29T14:08:33.751 [ERR] Barf!
 ```
