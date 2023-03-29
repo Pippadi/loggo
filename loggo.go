@@ -86,7 +86,7 @@ func Errorf(template string, args ...any) {
 func printRaw(lvl Level, args ...any) {
 	if lvl >= level {
 		outfile.WriteString(fmt.Sprintln(append(
-			[]any{time.Now().Local().Format("2006-01-02T15:04:05.000") + " [" + prefixes[lvl] + "] "},
+			[]any{time.Now().Local().Format("2006-01-02T15:04:05.000") + " [" + prefixes[lvl] + "]"},
 			args...)...,
 		))
 	}
