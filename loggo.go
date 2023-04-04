@@ -23,12 +23,13 @@ const (
 const (
 	redClr     = "\033[31m"
 	orangeClr  = "\033[33m"
+	greenClr   = "\033[92m"
 	defaultClr = "\033[39m"
 )
 
 var prefixes = [3]string{
 	orangeClr + "DBG" + defaultClr,
-	"INF",
+	greenClr + "INF" + defaultClr,
 	redClr + "ERR" + defaultClr,
 }
 
