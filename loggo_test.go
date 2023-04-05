@@ -45,3 +45,8 @@ func TestLogToFile(t *testing.T) {
 		}
 	}
 }
+
+func TestUnTrace(t *testing.T) {
+	SetFile(os.Stdout)
+	defer Un(Trace("TestUnTrace"))
+}

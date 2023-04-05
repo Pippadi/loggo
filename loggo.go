@@ -82,6 +82,19 @@ func Errorf(template string, args ...any) {
 	Error(fmt.Sprintf(template, args...))
 }
 
+// Trace is meant to be used with Un, to record the entering and leaving of fuctions
+// Usage: defer loggo.Un(loggo.Trace("MyFunc"))
+func Trace(fName string) string {
+	Debug("Entering", fName)
+	return fName
+}
+
+// Un is meant to be used with Trace, to record the entering and leaving of fuctions
+// Usage: defer loggo.Un(loggo.Trace("MyFunc"))
+func Un(fName string) {
+	Debug("Leaving", fName)
+}
+
 // printRaw conditionally prints args with the current
 // timestamp and colorized log level prefix
 func printRaw(lvl Level, args ...any) {
