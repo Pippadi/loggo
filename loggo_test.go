@@ -14,7 +14,7 @@ func logSamples() {
 }
 
 func TestDebug(t *testing.T) {
-	SetLevel(DebugLevel)
+	SetLevelString("debug")
 	logSamples()
 }
 

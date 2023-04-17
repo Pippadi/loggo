@@ -3,6 +3,7 @@ package loggo
 import (
 	"fmt"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -41,6 +42,22 @@ var outfile = os.Stdout
 // Log level is InfoLevel by default.
 func SetLevel(lvl Level) {
 	level = lvl
+}
+
+// SetLevelString sets log level based on the string passed, which must be
+// one of "debug", "info", and "error". Returns true if so, false otherwise.
+func SetLevelString(lvl string) bool {
+	var levelMap = map[string]Level{
+		"debug": DebugLevel,
+		"info":  InfoLevel,
+		"error": ErrorLevel,
+	}
+
+	aLevel, ok := levelMap[strings.ToLower(lvl)]
+	if ok {
+		level = aLevel
+	}
+	return ok
 }
 
 // SetFile sets a log file. It is the calling function's responsibility to
